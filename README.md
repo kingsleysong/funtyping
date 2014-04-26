@@ -1,0 +1,4 @@
+funtyping
+=========
+
+record daily life
