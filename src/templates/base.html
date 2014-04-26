@@ -1,0 +1,47 @@
+<html>
+    <head>
+        {% block head %}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% block title %}Heytime{% endblock %}</title>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/_init_.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/jquery-ui.min.css" />
+        <script type = 'text/javascript' src = '{{ static }}/js/jquery.min.js'></script>
+        <script type = 'text/javascript' src = '{{ static }}/js/jquery-ui.min.js'></script>
+        <script type = 'text/javascript' src = '{{ static }}/js/core.js'></script>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="header">
+            <div class="centerwrap">
+                <div class="logo">
+                    <a href='/'><img src="../static/img/logo2.jpg"  style="height:33px;display:block;" /></a>
+                </div>
+                <div class="globalmenu">
+                    {% set user_id = get_user_id() %}  
+                    {% set current_page = current_page|default('regist') -%}
+                    {% if user_id %}
+                    <ul>
+                        <li><a href='/logout'>注销</a></li>
+                        <li><a href='/setting/password'>设置</a></li>
+                        <li><a href='/notes'>历史</a></li>
+                        <li><a href='/latest'>最近</a></li>
+                        <li><a href='/write'>写日记</a></li>
+                    </ul>
+                    {% elif current_page == 'login'  %}
+                    <a href='/' class='regist'></a>
+                    {% else %}
+                    <a href='/login' class='login'></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="centerwrap">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+            <a href="http://www.miitbeian.gov.cn/">京ICP备13017939号</a>
+        </div>
+    </body>
+</html>

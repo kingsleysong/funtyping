@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}登陆{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/note.css" />
+{% endblock %}
+{% block content %} 
+    <div class="contentwrap center">
+        <div class="content">
+            <h2>写日记</h2>
+            <form action="/write" method="post">
+                <div class="subsection">
+                    <h3>日期</h3>
+                    <input type='text' name="note_date" value="" id="note_date" class="txt"/>
+                </div>
+                <div class="subsection">
+                    <h3>内容</h3>
+                    <textarea id="note_content" name="note_content" rows=10></textarea>
+                </div>
+                <div class="submitsection">
+                    <input type="submit" id="submit" value="" class="submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            var today = new Date().format('yyyy-MM-dd');
+            $('#note_date').val(today).datepicker();
+        });
+    </script>
+{% endblock %}
