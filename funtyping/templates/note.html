@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}最近{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/note.css" />
+    <script type = 'text/javascript' src = '{{ static }}/js/note.js'></script>
+{% endblock %}
+{% block content %} 
+    <div class="subnav_top">
+        <div class="menu">
+            <ul>
+                <li class="menu_item">
+                    <a href="javascript:;" class='newer' id="newer"></a>
+                </li>
+                <li class="menu_item">
+                    <a href="javascript:;" class='random' id="random"></a>
+                </li>
+                <li class="menu_item">
+                    <a href="javascript:;" class='older' id="older"></a>
+                </li>
+            </ul>
+        </div> 
+    </div>
+    <div class="contentwrap">
+        <div class="content">
+            <div class="ribbon">
+                <img src="../static/img/icon_ribbon.gif" />
+            </div>
+            <div class="article">
+                <input type='hidden' id='note_id' value='{{ note.id }}'/>
+                <h2 id='note_time'>{{ note.time}}</h2>
+                <h3 id="note_weekday">{{ note.weekday}}</h3>
+                <div class="text" id="note_content">
+                    {% autoescape off %}
+                        {{ note.content }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

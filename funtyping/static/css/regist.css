@@ -1,0 +1,43 @@
+.regist h1{
+    text-align:center;
+}
+.regist .centerwrap{
+    width:500px;
+}
+.regist .box{
+    background:url('../img/bg_loginbox.gif') repeat scroll 0 0 #EBE8E5;
+    border-color:#C2BFBD #C2BFBD #B7B4B1;
+    border-radius:10px 10px 10px 10px;
+    border-style:solid;
+    border-width:1px;
+    padding:31px 0 40px 57px;
+}
+.regist h2{
+    color:#777371;
+    font-size:1.25em;
+}
+.email{
+    color:#999999;
+    font-size:94%;
+    width:403px;
+    padding:8px 160px 11px 11px;
+}
+
+.regist .submit{
+    background:url('../img/btn_getstarted.png') no-repeat scroll 0 0 transparent;
+    position:absolute;
+    border:0 none;
+    cursor:pointer;
+    top:5px;
+    width:138px;
+    height:36px;
+    right:44px;
+    margin-top:0px;
+}
+.regist .wrap{
+    margin-top:25px;
+    position:relative;
+}
+.error{
+    padding:27px 0 0;
+}

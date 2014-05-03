@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}历史{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/note.css" />
+    <script type = 'text/javascript' src = '{{ static }}/js/note_list.js'></script>
+{% endblock %}
+{% block content %} 
+    <div class="sidebar">
+        <div class="menu">
+            <input type='hidden' id='datenum_hidden' value = '{{ datenum }}' />
+            <div class="item" id="date_sel_all">
+                <a href='/notes/'>所有</a>
+            </div>
+            {% for m in date_list %}
+                <div class="item" id="date_sel_{{ m }}">
+                    <a href="/notes/{{ m }}">{{ m[:4] }}年{{ m[4:] }}月</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="left contentwrap">
+        <div class="content">
+            <div class="articlelist">
+                {% set count = 1 %}
+                {% for note in notes %} 
+                    {% if count == 1 %}
+                        <div class="article first">
+                    {% else %}
+                        <div class="article">
+                    {% endif %}
+                    {% set count = count + 1 %}
+                    <div class='tip'>
+                        <span></span>
+                    </div>
+                    <h2>{{ note.time }}</h2>
+                    <h3>{{ note.weekday}}</h3>
+                    <div class='text'>
+                        {% autoescape off %}
+                            {{ note.content }}
+                        {% endautoescape %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,86 @@
+/*
+ * 添加日记页面
+ */
+
+.subsection{
+    margin-bottom:40px;
+}
+.subsection textarea{
+    width:523px;
+}
+.submitsection{
+    text-align:right;
+    padding-right:20px;
+}
+
+/*
+ * 单篇日记显示页面
+ */
+.subnav_top{
+    padding:70px 0 48px 0; 
+}
+.subnav_top .menu{
+    margin:0 auto;
+    width:470px;
+}
+.subnav_top .menu ul{
+    height:39px;
+    list-style:none;
+}
+.subnav_top .menu ul li a{
+    float:left;
+    background:url('../img/time_menu.gif') no-repeat scroll 0 0 transparent;
+    width:127px;
+    height:39px;
+    display:block;
+}
+.subnav_top .menu ul li a.newer{
+    background-position:0 0;
+}
+.subnav_top .menu ul li a.random{
+    background-position:-127px 0;
+}
+.subnav_top .menu ul li a.older{
+    background-position:-254px 0;
+}
+.ribbon{
+    left:297px;
+    top:-4px;
+    position:absolute;
+}
+
+/*
+ * 日记列表页
+ */
+.articlelist .article{
+    border-top:1px solid #E5E5E5;
+    padding:50px 0 21px;
+}
+
+.articlelist .first{
+    border-top:none;
+    padding-top:0px;
+}
+
+.articlelist .article h2{
+    text-align:left;
+    border:0 none;
+    margin:0;
+}
+
+.articlelist .article h3{
+    text-align:left;
+    margin:0;
+}
+.articlelist .tip{
+    background:url("../img/bg_tab.gif") no-repeat scroll 0 0 transparent;
+    color:#799AB2;
+    font-size:0.75em;
+    font-weight:bold;
+    height:26px;
+    left:-38px;
+    padding-top:4px;
+    position:absolute;
+    text-align:center;
+    width:37px;
+}

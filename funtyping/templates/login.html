@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% set current_page = "login" %}
+{% block title %}登录{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ static }}/css/login.css" />
+    <script type="text/javascript" src='{{ static }}/js/login.js'></script>
+{% endblock %}
+{% block content %} 
+    <div class="login">
+        <h1>Login</h1>
+        <div class="centerwrap">
+            <div class="box">
+                <form method="post" id='login_form'>
+                    <div class="wrap">
+                        <h2>Email Address</h2>
+                        <input type="text" tabindex="1" value="{{ email }}" name="email" class="txt" id="email"/>
+                    </div>
+                    <div class="wrap">
+                        <h2>Password</h2>
+                        <input type="password" tabindex="2" value="" name="password" class="txt" id="password"/>
+                    </div>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="error">{{ message }}</div>
+                        {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div class="error" id="error_mes"></div>
+                    <div class="wrap">
+                        <input type="submit" class="submit" value="" id="sure"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

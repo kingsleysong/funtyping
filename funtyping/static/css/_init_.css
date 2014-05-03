@@ -1,0 +1,215 @@
+/*
+ * Main style sheet for leaftime
+ * Author: Huang Xin
+ * Date:2013.03.11
+ */
+body{
+    background-color:#FCFBF9;
+        font-size:1.15em;
+    font-family:arial;
+    margin:0;
+    padding:0;
+}
+
+h1{
+    color:#777472;
+    font-size:2.18em;
+    font-weight:bold;
+    line-height:1.53em;
+}
+h2,h3,p{
+    font-weight:normal;
+}
+
+a{
+    text-decoration:none;
+}
+.center{
+    margin:0 auto;
+}
+.left{
+    margin-left:0 !important;
+}
+.header{
+    background:url('../img/bg_header.gif') repeat scroll 0 0 #649CC7;
+    height:78px;
+}
+.centerwrap{
+    margin:0 auto;
+    width:890px;
+}
+.footer{
+    padding-top:80px;
+    padding-bottom:30px;
+    text-align:center;
+}
+.footer a{
+    color:#a6a6a6;
+    font-size:80%;
+}
+.logo{
+    float:left;
+    height:33px;
+    padding:23px 0 0 52px;
+}
+.centerwrapcenter{
+    margin:0 auto;
+    width:642px;
+}
+.contentwrap{
+    border-radius:10px 10px 10px 10px;
+    border-width:1px;
+    border-color:#F2F1EF;
+    border-style:solid;
+    background-color:#DEDDDC;
+    width:638px;
+    margin:5px auto;
+}
+.content{
+    border-radius:10px 10px 10px 10px;
+    border-width:3px;
+    border-style:solid;
+    border-color:#F7F7F7;
+    background-color:#FFFFFF;
+    padding:38px 50px 21px 42px;
+    position:relative;
+}
+
+.content h2{
+    padding:0 0 15px;
+    margin-bottom:35px;
+    border-bottom:1px solid #E5E5E5;
+}
+
+.content h3{
+    padding-bottom:5px;
+}
+
+.article h2{
+    color:#A41100;
+    text-align:center;
+    font-size:1.18em;
+}
+.article h3{
+    color:#999999;
+    text-align:center;
+    font-size:1em;
+}
+.article .text{
+    padding-top:25px;
+    line-height:1.7em;
+}
+
+input.txt{
+    color:#333333;
+    font-family:arial;
+    font-size:1.13em;
+    padding-top:6px;
+    padding-bottom:7px;
+    padding-left:8px;
+}
+input.password{
+    height:45px;
+    font-size:1.13em;
+}
+.error{
+    color:#B21D1D;
+    font-size:1.25em;
+}
+.globalmenu{
+    float:right;
+}
+.globalmenu a{
+    color:#FFFFFF;
+}
+.globalmenu ul{
+    padding-top:10px;
+    padding-right:55px;
+    list-style:none;
+    height:30px;
+}
+.globalmenu ul li{
+    float:right;
+    margin-left:25px;
+}
+.globalmenu .login{
+    background:url("../img/btn_login.gif") no-repeat scroll 0 0 transparent;
+    display:block;
+    height:32px;
+    width:70px;
+    margin-top:21px;
+}
+.globalmenu .regist{
+    background:url("../img/btn_regist.jpg") no-repeat scroll 0 0 transparent;
+    display:block;
+    height:32px;
+    width:70px;
+    margin-top:21px;
+}
+
+.sidebar{
+    float:right;
+    width:202px;
+    padding-top:50px;
+    margin-top:30px;
+    height:100px;
+}
+.sidebar .menu{
+    border-color:#E5E4E1 #E5E4E1 #F2F1EF;
+    border-style:solid;
+    border-width:1px;
+}
+.sidebar .menu .on{
+    background:url("../img/img_navarrow.gif") no-repeat scroll 10px 11px #9DC068;
+    border:1px solid #7D9C4D;
+    font-weight:bold;
+    position:relative;
+    left:-1px;
+    top:-1px;
+    width:202px;
+}
+.sidebar .menu .on a{
+    color:#FFFFFF;
+}
+.sidebar .menu .item{
+    border-color:#FFFFFF #000000 #E5E4E1;
+    border-style:solid;
+    border-width:1px 0;
+    cursor:pointer;
+    text-align:center;
+    padding:8px 0 10px;
+}
+textarea{
+    -moz-box-shadow:1px 1px 0 #E7E7E7;
+    -moz-box-sizing:border-box;
+    border-color:#CCCCCC #999999 #999999 #CCCCCC;
+    border-style:solid;
+    border-width:1px;
+    font-family:arial,sans-serif;
+    font-size:1.13em;
+    height:300px;
+    margin:10px auto;
+    outline-color:-moz-use-text-color;
+    outline-style:none;
+    outline-width:medium;
+    padding:2px;
+    width:100%;
+}
+
+.wrap{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+label{
+    margin:10px;
+}
+
+input.submit{
+    background:url("../img/btn_save.gif") no-repeat scroll 0 0 transparent;
+    border:0 none;
+    cursor:pointer;
+    height:39px;
+    width:138px;
+}
+
