@@ -1,9 +1,20 @@
 #-*- coding:utf-8 -*-
-#from funtyping.views.register import get_user_id
-
+# 服务器启动参数
 HOST='0.0.0.0'
 PORT=5000
+# 是否开启debug模式
 DEBUG=True
 
-#app.jinja_env.globals.update(get_user_id=get_user_id)
-#app.jinja_env.globals.update(static='/static')
+# 发送邮件的服务器地址
+MAIL_HOST='smtp.163.com'
+MAIL_PORT='465'
+# 发送邮件的用户名密码
+MAIL_USERNAME='pkusonghuiqing@163.com'
+MAIL_PASSWORD='xxxxxxxx'
+
+SQLALCHEMY_DATABASE_URI='mysql://root:11235813@localhost/leaftime'
+SECRET_KEY='!@$funtyping!#$%^'
+
+
+
+
