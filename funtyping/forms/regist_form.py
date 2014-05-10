@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from funtyping.utils.mail import check_email
+from funtyping.utils.mail import check_email_name
 from funtyping.models.user_model import User, UserRegist
-class FromMessage():
+class FormMessage():
     def __init__(self, is_success, message=''):
         self.is_success = is_success
         self.message = message
@@ -13,7 +13,7 @@ class RegistForm():
     def validate(self):
         if self.email == '':
             return FormMessage(False, u'邮件不能为空')
-        if not check_email(self.email):
+        if not check_email_name(self.email):
             return FormMessage(False, u'请输入合法的邮件地址')
         return FormMessage(True)
 
@@ -22,7 +22,7 @@ class RegistPasswordForm():
         self.email = email
         self.password = password
     def validate(self):
-        if self.email == ''
+        if self.email == '':
             return ValidateInfo(False, u'邮箱不能为空')
         if not check_email(self.email):
             return ValidateInfo(False, u'请输入合法的邮箱地址')

@@ -27,3 +27,8 @@ def login():
         else:
             flash(result.message)
     return render_template('login.html', email=email)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('register'))

@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from funtyping.models import db
+from funtyping.views import db
+from datetime import *
+from funtyping.utils.consts import USER_STATUS_NORMAL
 
 class UserRegistQuery:
     def get_by_email(self, email):
@@ -40,7 +42,7 @@ class User(db.Model):
     user_query = UserQuery()
     __tablename__ = "user"
     id = db.Column('id',db.Integer, primary_key=True, autoincrement=True)
-    password = db.Column('password',mdb.VARCHAR(150), nullable=False)
+    password = db.Column('password',db.VARCHAR(150), nullable=False)
     salt = db.Column('salt', db.VARCHAR(20), nullable=False)
     email = db.Column('email', db.VARCHAR(63), nullable=False)
     create_time = db.Column('create_time', db.TIMESTAMP, nullable=False)

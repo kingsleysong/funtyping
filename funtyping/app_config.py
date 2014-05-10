@@ -10,9 +10,9 @@ MAIL_HOST='smtp.163.com'
 MAIL_PORT='465'
 # 发送邮件的用户名密码
 MAIL_USERNAME='pkusonghuiqing@163.com'
-MAIL_PASSWORD='xxxxxxxx'
+MAIL_PASSWORD='x112358x'
 
-SQLALCHEMY_DATABASE_URI='mysql://root:11235813@localhost/leaftime'
+SQLALCHEMY_DATABASE_URI='mysql://root@localhost/leaftime'
 SECRET_KEY='!@$funtyping!#$%^'
 
 

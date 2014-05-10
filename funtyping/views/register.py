@@ -1,7 +1,12 @@
 #-*- coding:utf-8 -*-
 from funtyping import app
-from flask import render_template
+from flask import render_template,request,flash,redirect,url_for
+from funtyping.forms import regist_form 
+from funtyping.models.user_model import User,UserRegist 
+from funtyping.utils.mail import send_regist_mail
+import random
 @app.route('/regist',methods=['POST','GET'])
+@app.route('/')
 def regist():
 	return render_template('regist.html')
 @app.route('/welcome',methods=['POST','GET'])
@@ -10,10 +15,10 @@ def welcome():
         pass
     elif request.method == 'POST':
         email = request.form['email'].strip()
-        email_is_valid = RegistForm(email=email).validate()
+        email_is_valid = regist_form.RegistForm(email=email).validate()
         if email_is_valid.is_success:
             user = User.user_query.get_by_email(email)
-            if user:
+            if not user:
                 flash(u'该邮件已经注册')
             else:
                 code = ''.join(random.sample('abcdefghijklmnopqrstuvwxyz1234567890',20))
@@ -45,7 +50,7 @@ def init_user():
 
 @app.route('/init-password', methods=['GET','POST'])
 def init_password():
-    if request.method == 'GET'
+    if request.method == 'GET':
         return render_template('password.html')
     elif request.method == 'POST':
         email = request.form['email']

@@ -1,0 +1,6 @@
+# -*- coding:utf-8 -*-
+
+USER_STATUS_INVALID = 'U'
+USER_STATUS_NORMAL = 'N'
+USER_STATUS_SUICIDE = 'S'
+

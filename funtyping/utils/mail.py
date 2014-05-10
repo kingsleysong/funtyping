@@ -12,7 +12,7 @@ def send_regist_mail(mail_to , code):
     def __generate_regist_url():
         f = open('funtyping/utils/regist_mail.tpl','r')
         body = f.read()
-        base_url = 'http://127.0.0.1:5000/init-user?email=%s&code=%s'
+        base_url = 'http://117.121.10.71:5000/init-user?email=%s&code=%s'
         body_url = base_url %(mail_to, code)
         return body.format(body_url)
     try:
@@ -33,14 +33,16 @@ def send_mail(mail_to, title, text):
     # 连接到服务器 
     mail_server = smtplib.SMTP(MAIL_HOST)
     # 返回服务器的特性
-    code = s.ehlo()[0]
+    code = mail_server.ehlo()[0]
     if not (200 <= code <= 299):
         raise SMTPHeloError(code)
     # 登录到邮件服务器
+    print MAIL_USERNAME
+    print MAIL_PASSWORD
     mail_server.login(MAIL_USERNAME, MAIL_PASSWORD)
     # 发送邮件
     mail_server.sendmail(MAIL_USERNAME, mail_to, message.as_string())
     # 退出
     mail_server.quit()
 def check_email_name(email_name):
-    return re.match("(?:~|\s)[-a-z0-9_.]+@(?:[-a-z0-9+\.]+[a-z]{2,6}(?:\s|$)", email)
+    return re.match("(?:^|\s)[-a-z0-9_.]+@(?:[-a-z0-9]+\.)+[a-z]{2,6}(?:\s|$)", email_name)

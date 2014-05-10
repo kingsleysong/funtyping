@@ -1,4 +1,5 @@
-use leaftime;
+
+use funtyping;
 CREATE TABLE IF NOT EXISTS `user`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(15) NOT NULL DEFAULT '',
