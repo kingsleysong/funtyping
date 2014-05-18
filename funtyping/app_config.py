@@ -12,7 +12,7 @@ MAIL_PORT='465'
 MAIL_USERNAME='pkusonghuiqing@163.com'
 MAIL_PASSWORD='x112358x'
 
-SQLALCHEMY_DATABASE_URI='mysql://root@localhost/leaftime'
+SQLALCHEMY_DATABASE_URI='mysql://root@localhost/funtyping'
 SECRET_KEY='!@$funtyping!#$%^'
 
 

@@ -17,16 +17,18 @@ class BlogQuery:
 
     @classmethod
     def get_recent_blog_by_user(cls, user_id):
-        blog = Blog.query.filter_by(user_id == user_id).order_by('-id').first()
+        blog = Blog.query.filter(user_id == user_id).order_by('-id').first()
         return blog
 
     @classmethod
     def get_older_blog(cls, user_id, blog_id):
-        blog = Blog.query.filter(Blog.user_id == user_id, Blog.id<blog_id).order_by('-id').first()
-
+        blog = Blog.query.filter(Blog.user_id == user_id, Blog.id < blog_id).order_by('-id').first()
+        return blog
+    
     @classmethod
     def get_newer_blog(cls, user_id, blog_id):
         blog = Blog.query.filter(Blog.user_id == user_id, Blog.id>blog_id).order_by('id').first()
+        return blog
 
 class Blog(db.Model):
     blog_query = BlogQuery()

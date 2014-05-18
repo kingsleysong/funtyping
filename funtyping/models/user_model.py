@@ -3,7 +3,7 @@
 from funtyping.views import db
 from datetime import *
 from funtyping.utils.consts import USER_STATUS_NORMAL
-
+from funtyping.utils import secure
 class UserRegistQuery:
     def get_by_email(self, email):
         user = UserRegist.query.filter_by(email=email).order_by('-id').first()
@@ -70,7 +70,7 @@ class User(db.Model):
         db.session.commit()
 
     def set_password(self, password):
-        salt,en_passwod = secure.encrypt(password)
+        salt,en_password = secure.encrypt(password)
         self.password = en_password
         self.salt = salt
         db.session.commit()

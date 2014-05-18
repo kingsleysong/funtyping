@@ -8,3 +8,5 @@ db.init_app(app)
 db.app = app
 
 import register
+import login
+import blog_manager

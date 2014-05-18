@@ -4,6 +4,7 @@ from flask import render_template,request,flash,redirect,url_for
 from funtyping.forms import regist_form 
 from funtyping.models.user_model import User,UserRegist 
 from funtyping.utils.mail import send_regist_mail
+from funtyping.utils.consts import USER_STATUS_INVALID,USER_STATUS_NORMAL
 import random
 @app.route('/regist',methods=['POST','GET'])
 @app.route('/')
@@ -17,8 +18,8 @@ def welcome():
         email = request.form['email'].strip()
         email_is_valid = regist_form.RegistForm(email=email).validate()
         if email_is_valid.is_success:
-            user = User.user_query.get_by_email(email)
-            if not user:
+            user = UserRegist.user_regist_query.get_by_email(email)
+            if user != None:
                 flash(u'该邮件已经注册')
             else:
                 code = ''.join(random.sample('abcdefghijklmnopqrstuvwxyz1234567890',20))
@@ -55,7 +56,7 @@ def init_password():
     elif request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        result = RegistPasswordForm(email=email, password=password).validate()
+        result = regist_form.RegistPasswordForm(email=email, password=password).validate()
         if result.is_success:
             user = User.create(email=email, password=password, status=USER_STATUS_INVALID)
             return render_template('write.html')
